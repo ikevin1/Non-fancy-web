@@ -1,0 +1,135 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/template-overviews/shop-homepage)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+
+body {
+    padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 76px;
+  }
+    
+}
+@media (max-width: 220px) {
+  body {
+    padding-top: auto;
+  }
+    
+}
+
+.animate-show-hide.ng-hide {
+  opacity: 0;
+}
+
+.animate-show-hide.ng-hide-add,
+.animate-show-hide.ng-hide-remove {
+  transition: all linear 0.5s;
+}
+
+.check-element  {
+  border: 1px solid black;
+  opacity: 1;
+  padding: 10px;
+}
+
+
+h2, a, p, *:before,h1 {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 300;
+}
+h1 {
+  color: #3498db;
+}
+
+h2 {
+  color: #2980b9;
+  margin-top: 0;
+  font-size: 15px;
+  background-color: white;
+  height: 24px;
+  text-align: center;
+  padding: 16px;
+  z-index: 15;
+  border-radius: 4px;
+
+  transition: all 2s ease-out;
+}
+#searchBoxes{
+    padding-top: 350px;
+    display: block;
+    margin-top: inherit;
+}
+.teen{
+    padding-bottom: 200px;
+    margin-left: auto;
+    padding-left: 100px;
+}
+
+p {
+ display: block; 
+  width: 100%;
+  color: #2c3e50;
+  clear: both;
+}
+.description {
+  margin-bottom: 10px;
+}
+footer {
+    display: block;
+}
+
+button {
+  border: 0;
+  background-color: #3498db;
+  color: white;
+  border-radius: 4px;
+  padding: 5px 10px;
+  transition: background-color 0.2s ease-out;
+ 
+ 
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+button:active, button:hover {
+  outline: none;
+}
+
+a {
+  color: palegoldenrod;
+  transition: color 0.2s ease-out;
+  /*padding: 5px 10px;*/
+  margin-right: 16px;
+}
+
+a:hover {
+  color: #2ecc71;
+}
+.offer {
+    float: left;
+    border: 1px dashed #95a5a6;
+    font-size: 12px;
+}
+#hand{
+    font-size: 14px;
+    color: red;
+}
+.wrapper {
+  border: 1px dashed #95a5a6;
+  height: 56px;
+  width: 300px;
+  margin-top: 16px;
+  border-radius: 2px;
+  position: relative;
+  font-size: 12px;
+}
+
+.wrapper p {
+  line-height: 31px;
+}
