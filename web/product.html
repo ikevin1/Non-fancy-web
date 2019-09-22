@@ -42,31 +42,28 @@
     </div>
 </nav>
 <div ng-view></div>
-<div id="searchBoxes">
-    <h1>Search for your Actor details below</h1>
-    Global Search Filter: <input type="text" ng-model="globalSearch.$"><br><br>
-    Actor Name Search Filter: <input type="text" ng-model="globalSearch.Name"><br><br>
-    Description Search Filter: <input type="text" ng-model="globalSearch.Description"><br><br>
-    Price Search Filter: <input type="text" ng-model="globalSearch.Price"><br><br>
 
-</div>
-<md-divider></md-divider>
-<div class="itemController" >
+<div>
     <ul>
-
-        <li ng-repeat="item in products | filter:globalSearch">
-            Name: {{item.Name}} <br> Description: {{item.Description}} <br>  <br> Image: <a href><img class="photo" style="height:100px; width:80px;" alt="item image" ng-src="{{item.image}}"> </a> <br><br>
+        <h1>Search for your products details below</h1>
+        <li ng-repeat="item in items | filter:globalSearch">
+            {{"Name: " + item.Name +" Description: " + item.Description + "Price: " + item.Price + "Image: " +item.<img ng-src="{{myVar}}">}}
         </li>
     </ul>
+</div>
 
-
-
+<div id="searchBoxes">
+    Global Search Filter: <input type="text" ng-model="globalSearch.$"><br><br>
+    Item Name Search Filter: <input type="text" ng-model="globalSearch.Name"><br><br>
+    Description Search Filter: <input type="text" ng-model="globalSearch.Description"><br><br>
+    Price Search Filter: <input type="text" ng-model="globalSearch.Price"><br><br>
+    Image Search Filter: <input type="img" ng-model="globalSearch.<img>"><br><br>
 </div>
 </body>
 <!-- Footer -->
 <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; {{Cart}} {{copyright}} Kevin.</p>
+        <p class="m-0 text-center text-white">Copyright &copy; {{Cart}} {{copyright}}.</p>
     </div>
 </footer>
 
