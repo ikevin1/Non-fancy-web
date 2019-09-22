@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.*;
 
-@WebServlet(name = "searchServlet")
+@WebServlet(name = "searchServlet", urlPatterns = "/search")
 public class searchServlet extends HttpServlet {
     private final String DRIVER_NAME = "jdbc:derby:";
     private final String DATABASE_PATH = "/WEB-INF/lib/comedian";
