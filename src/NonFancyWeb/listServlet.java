@@ -13,7 +13,7 @@ public class listServlet extends HttpServlet {
     private final String DRIVER_NAME = "jdbc:derby:";
     private final String DATABASE_PATH = "/WEB-INF/lib/comedian";
     private final String USERNAME = "ikevin";
-    private final String PASSWORD = "000520263";
+    private final String PASSWORD = "ikevin";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
