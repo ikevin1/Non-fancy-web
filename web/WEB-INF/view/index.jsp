@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>iSupport</title>
-    <link rel="icon" type="image/png" href="pictures/hand.png">
+    <link rel="icon" type="image/png" href="resources/img/hand.png">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.js"></script>
@@ -19,11 +19,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular-touch.min.js"></script>
-    <script src="vendor/ui-bootstrap/js/ui-bootstrap-tpls-3.0.4.min.js"></script>
+    <script src="resources/vendor/ui-bootstrap/js/ui-bootstrap-tpls-3.0.4.min.js"></script>
     <!-- Custom styles  -->
-    <link href="cart.css" rel="stylesheet">
+    <link href="resources/css/cart.css" rel="stylesheet">
     <!-- Custom JS code -->
-    <script src="cart.js"></script>
+    <script src="resources/js/cart.js"></script>
 </head>
 
 <body ng-controller="itemsController">
@@ -36,7 +36,7 @@
                 <li class="nav-item" ng-class="{active: isActive('/')}"> <a class="nav-link" href="#/!">Home </a> </li>
                 <li class="nav-item" ng-class="{active: isActive('/about')}"> <a class="nav-link" href="#!about">About</a> </li>
                 <li class="nav-item" ng-class="{active: isActive('/product')}"> <a class="nav-link" href="#!product">Product </a> </li>
-                <li class="nav-item" ng-class="{active: isActive('/summary')}"> <a class="nav-link" href="#summary">Summary <img ng-src="pictures/shop cart.png" aria-label="shop cart"></a> </li>
+                <li class="nav-item" ng-class="{active: isActive('/summary')}"> <a class="nav-link" href="#summary">Summary <img ng-src="resources/img/shop cart.png" aria-label="shop cart"></a> </li>
             </ul>
         </div>
     </div>
@@ -44,7 +44,7 @@
 <div ng-view></div>
 <!-- Page Content -->
 <div id="containerr" style="padding-left: 500px; padding-bottom: 40px;">
-    <img ng-src="pictures/dis.jpg" style="height:190px; width:300px">
+    <img ng-src="resources/img/dis.jpg" style="height:190px; width:300px">
 </div>
 <div>
     <md-divider></md-divider>
@@ -115,18 +115,14 @@
 <main style="float: left;">
     <!--  <md-divider></md-divider>-->
     <div class="offer">
-        <img ng-src="pictures/hand.png" style="height:70px; width:90px">
+        <img ng-src="resources/img/hand.png" style="height:70px; width:90px">
         <p id="hand">Give Extra Hand For Special Treat!</p>
         <p class="description">Don't miss out on this special offer!!!</p>
-        <p> <img ng-src="pictures/Lu.png" style="height:70px; width:90px"></p>
+        <p> <img ng-src="resources/img/Lu.png" style="height:70px; width:90px"></p>
         <p>Support Lu D' Pilot three times to get amazing reward</p>
 
         <button ng-click="showme=true">Interested</button>
         <button ng-click="showme=false">Not Now</button>
-
-
-
-
 
         <div class="wrapper">
             <h2 ng-hide="showme">Sorry, you missed this special offer</h2>
@@ -135,31 +131,23 @@
 
     </div>
     <br>
-    <!--<md-divider></md-divider>-->
-     <!--Global search bar-->
-</main>
 
+</main>
 
 </body>
 <!--Check out form-->
 
 <br>
-<!--
-    <div class="DemoCtrlr" layout="column" ng-cloak class="md-inline-form">
-    <input ng-model="code">
-        <div ng-message="md-maxlength" class="my-message">
-        </div>
-    </div>
--->
+
 
 <!-- Footer -->
-<!--
+
 <footer class="py-5 bg-dark">
   <div class="container">
     <p class="m-0 text-center text-white">Copyright &copy; {{Cart}} {{copyright}} Kevin.</p>
   </div>
 </footer>
--->
+
 
 
 </html>
