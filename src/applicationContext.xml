@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:property-placeholder location="classpath:comedian.properties"/>
+
+    <!-- Define your beans here -->
+    <bean id="myLoggingService" class="springxml.services.ConsoleLoggingService">
+        <!--<bean id="myLoggingService" class="NonFancyWeb.springxml.services.ConsoleLoggingService">-->
+       </bean>
+
+       <bean id="myComedian" class="springxml.beans.Comdeian">
+           <!-- Setter injection -->
+        <property name="loggingService" ref="myLoggingService"/>
+
+        <!-- Inject literal values from properties file -->
+        <property name="name" value="${c1.artist}"/>
+        <property name="description" value="${c1.Desc}"/>
+    </bean>
+
+</beans>
