@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name="comedian")
 public class Comedian {
-
+//I don't have any cascade or fetch type
     @javax.persistence.Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="comedian_id")
