@@ -5,7 +5,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import java.util.Date;
 import java.util.List;
 
 public class HibernateApp {
@@ -25,11 +24,12 @@ public class HibernateApp {
         HibernateApp hiber = new HibernateApp();
 
         try {
-            hiber.createComedy();
-            hiber.readComedy(1);
-            hiber.updateComedy(1);
-            hiber.deleteComedy(1);
-            hiber.listAllComedi();
+            //hiber.createComedy();
+           // hiber.readComedy(4);
+            //hiber.updateComedy(1);
+           // hiber.listAllComedi();
+            hiber.updateComedianXiXi();
+            //hiber.deleteComedy(1);
 
         } finally {
             hiber.close();
@@ -81,6 +81,7 @@ private void updateComedy(int comedian_Id) {
     session.getTransaction().commit();
 }
     //delete method for the object
+    //without entering the comedian id, error might occur/delete all data
     private void deleteComedy(int comedian_Id) {
         Session session = factory.getCurrentSession();
 
@@ -118,6 +119,18 @@ private void updateComedy(int comedian_Id) {
     }
     //update a particular ID method for the object
     //just change the where clause to have the ID you want to update
+    private void updateComedianXiXi() {
+        Session session = factory.getCurrentSession();
+
+        session.beginTransaction();
+
+        /**  CRUD Below**/
+        List<Comedian> list =
+                session.createQuery("from Comedian order by name asc").getResultList();
+        list.get(4).setName("Bessie");
+
+        session.getTransaction().commit();
+    }
 
     //delete a particular ID - method for the object
     //just change the where clause to have the ID you want to delete

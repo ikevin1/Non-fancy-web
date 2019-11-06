@@ -11,13 +11,11 @@ public class Comedian {
     @Column(name="comedian_id")
     private int Id;
    // private int ComedianId;
-    @Column(name="nm")
+    @Column(name="name")
     private String name;
-    @OneToOne(mappedBy = "detail",
-            cascade = {CascadeType.DETACH, CascadeType.MERGE,
-                    CascadeType.PERSIST, CascadeType.REFRESH})
+    @Column(name="description")
     private String description;
-    @Column(name="img_filename")
+    @Column(name="picture_name")
     private String picture;
     @Column(name="price")
     private int price;
