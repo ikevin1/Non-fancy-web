@@ -1,4 +1,13 @@
 package springxml.services;
 
-public interface ConsoleLoggingService {
+public class ConsoleLoggingService implements LoggingService{
+    @Override
+    public void log(String show) {
+
+    }
+
+    @Override
+    public void error(String show) {
+
+    }
 }
