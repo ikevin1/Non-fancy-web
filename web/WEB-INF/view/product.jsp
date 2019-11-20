@@ -1,9 +1,10 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html ng-app="iSupport">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>iSupport</title>
+    <title>iSupport - Products</title>
     <link rel="icon" type="image/png" href="WEB-INF/resources/img/hand.png">
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
     <!-- Bootstrap core CSS -->
