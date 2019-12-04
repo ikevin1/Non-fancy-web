@@ -6,9 +6,9 @@ import org.springframework.web.multipart.MultipartFile;
 import java.util.List;
 
 public interface ComedianServices {
-    List<Comedian> getDonuts();
+    List<Comedian> getComedians();
 
-    void saveDonut(Comedian aComedian, MultipartFile file, String applicationPath);
+    void saveComedian(Comedian aComedian, MultipartFile file, String applicationPath);
 
     Comedian getComedian(int theId);
 
