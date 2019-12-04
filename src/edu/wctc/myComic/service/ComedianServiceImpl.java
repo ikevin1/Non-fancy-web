@@ -4,8 +4,6 @@ import edu.wctc.myComic.dao.ComedianDAO;
 import edu.wctc.myComic.entity.Comedian;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 import javax.transaction.Transactional;
 
@@ -13,10 +11,10 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-public class ComedianServicesImpl implements ComedianServices {
+public class ComedianServiceImpl implements ComedianService {
 
     @Autowired
-    private Picture picture;
+    private PictureService pictureService;
 
     @Autowired
     private ComedianDAO comedianDAO;

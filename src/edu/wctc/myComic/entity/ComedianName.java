@@ -12,8 +12,17 @@ public class ComedianName {
     @Column(name = "comedian_id")
     private int id;
 
-    @Column(name = "nm")
-    private String name;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "detail_id")
+    private ComedianNameDetail detail;
+
+    @ManyToOne(cascade = {CascadeType.DETACH,
+            CascadeType.MERGE,
+            CascadeType.PERSIST,
+            CascadeType.REFRESH})
+    @JoinColumn(name = "comedian_id")
+    private ComedianName name;
+
     @Column(name = "img_directory")
     private String imageDirectory;
 
@@ -26,16 +35,31 @@ public class ComedianName {
     }
 
     public ComedianName(String name, String imageDirectory) {
-        this.name = name;
         this.imageDirectory = imageDirectory;
     }
 
-    public void add(Comedian tempDonut) {
+    public void add(Comedian tempComedian) {
         if (comedians == null) {
             comedians = new ArrayList<>();
         }
-        comedians.add(tempDonut);
-        tempDonut.setName(this);
+        comedians.add(tempComedian);
+        tempComedian.setName(this);
+    }
+
+    public ComedianNameDetail getDetail() {
+        return detail;
+    }
+
+    public void setDetail(ComedianNameDetail detail) {
+        this.detail = detail;
+    }
+
+    public ComedianName getName() {
+        return name;
+    }
+
+    public void setName(ComedianName name) {
+        this.name = name;
     }
 
     public int getId() {
@@ -44,14 +68,6 @@ public class ComedianName {
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 
     public String getImageDirectory() {

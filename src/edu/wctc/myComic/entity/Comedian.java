@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.Date;
 
 @Entity
 @Table(name = "comedian")
@@ -20,13 +21,11 @@ public class Comedian {
     @JoinColumn(name = "comedian_id")
     private ComedianName name;
 
-    @NotNull(message = "required")
-    @Size(min = 1, max = 30, message = "1-30 characters")
-    @Column(name = "nm")
-    private String names;
-
     @Column(name = "img_filename")
     private String picture;
+
+    @Column(name = "date_added")
+    private Date dateAdded;
 
     @NotNull(message = "required")
     @Size(min = 1, max = 350, message = "1-350 characters")
@@ -42,8 +41,15 @@ public class Comedian {
         //no argument constructor
     }
 
+    public Date getDateAdded() {
+        return dateAdded;
+    }
+
+    public void setDateAdded(Date dateAdded) {
+        this.dateAdded = dateAdded;
+    }
+
     public Comedian(@NotNull(message = "required") @Size(min = 1, max = 30, message = "1-30 characters") String names, String picture, @NotNull(message = "required") @Size(min = 1, max = 350, message = "1-350 characters") String description, @NotNull(message = "required") @Min(value = 1, message = "good donations at least 10") double price) {
-        this.names = names;
         this.picture = picture;
         this.description = description;
         this.price = price;
@@ -72,14 +78,6 @@ public class Comedian {
 
     public void setName(ComedianName name) {
         this.name = name;
-    }
-
-    public String getNames() {
-        return names;
-    }
-
-    public void setNames(String names) {
-        this.names = names;
     }
 
     public String getPicture() {
@@ -111,7 +109,6 @@ public class Comedian {
         return "Comedian{" +
                 "id=" + id +
                 ", name=" + name +
-                ", names='" + names + '\'' +
                 ", picture='" + picture + '\'' +
                 ", description='" + description + '\'' +
                 ", price=" + price +
