@@ -3,7 +3,7 @@ package edu.wctc.myComic.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "comedian_name_detail")
+@Table(name = "detail")
 public class ComedianNameDetail {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
