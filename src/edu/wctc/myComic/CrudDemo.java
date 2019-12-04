@@ -72,8 +72,8 @@ public class CrudDemo {
         // Do stuff
         ComedianName aName = session.get(ComedianName.class, nameId);
 
-        Comedian comedian1 = new Comedian("xi", 390, "input xi detail here",  50 new Date());
-        Comedian comedian2 = new Comedian("jo", 285, "input their", 50 new Date());
+        Comedian comedian1 = new Comedian("xi", 390, "9/15/2019",  "I am a new Footballer", 50 new Date());
+        Comedian comedian2 = new Comedian("jo", 285, "9/17/2019", "I am a new soccer player",55 new Date());
 
         aName.add(comedian1);
         aName.add(comedian2);

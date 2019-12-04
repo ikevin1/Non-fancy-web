@@ -49,8 +49,10 @@ public class Comedian {
         this.dateAdded = dateAdded;
     }
 
-    public Comedian(@NotNull(message = "required") @Size(min = 1, max = 30, message = "1-30 characters") String names, String picture, @NotNull(message = "required") @Size(min = 1, max = 350, message = "1-350 characters") String description, @NotNull(message = "required") @Min(value = 1, message = "good donations at least 10") double price) {
+    public Comedian(ComedianName name, String picture, Date dateAdded, @NotNull(message = "required") @Size(min = 1, max = 350, message = "1-350 characters") String description, @NotNull(message = "required") @Min(value = 1, message = "good donations at least 10") double price) {
+        this.name = name;
         this.picture = picture;
+        this.dateAdded = dateAdded;
         this.description = description;
         this.price = price;
     }
