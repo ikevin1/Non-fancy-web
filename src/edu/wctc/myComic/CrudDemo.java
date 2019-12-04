@@ -16,6 +16,7 @@ public class CrudDemo {
                 .addAnnotatedClass(Comedian.class)
                 .addAnnotatedClass(String.class)
                 .buildSessionFactory();
+
     }
 
     public static void main(java.lang.String[] args) {
