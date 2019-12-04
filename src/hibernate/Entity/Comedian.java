@@ -70,8 +70,8 @@ public class Comedian {
     public void setPrice(int price) {
         this.price = price;
     }
-    //This is the toString with override
 
+    //This is the toString with override
     @Override
     public String toString() {
         return "Comedian{" +
