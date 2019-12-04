@@ -1,8 +1,6 @@
 package edu.wctc.myComic;
 
 import edu.wctc.myComic.entity.Comedian;
-import edu.wctc.myComic.entity.ComedianName;
-import edu.wctc.myComic.entity.ComedianNameDetail;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -16,12 +14,11 @@ public class CrudDemo {
     public CrudDemo() {
         factory = new Configuration().configure("hibernate.cfg.xml")
                 .addAnnotatedClass(Comedian.class)
-                .addAnnotatedClass(ComedianName.class)
-                .addAnnotatedClass(ComedianNameDetail.class)
+                .addAnnotatedClass(String.class)
                 .buildSessionFactory();
     }
 
-    public static void main(String[] args) {
+    public static void main(java.lang.String[] args) {
         CrudDemo demo = new CrudDemo();
 
         try {
@@ -49,20 +46,20 @@ public class CrudDemo {
         session.getTransaction().commit();
     }
 
-    private void getComediansForName(int nameId) {
-        Session session = factory.getCurrentSession();
-
-        session.beginTransaction();
-
-        // Do stuff
-        ComedianName aName = session.get(ComedianName.class, nameId);
-
-        for (Comedian aComedian : aName.getComedians()) {
-            System.out.println(aComedian);
-        }
-
-        session.getTransaction().commit();
-    }
+//    private void getComediansForName(int nameId) {
+//        Session session = factory.getCurrentSession();
+//
+//        session.beginTransaction();
+//
+//        // Do stuff
+//        String aName = session.get(String.class, nameId);
+//
+//        for (Comedian aComedian : aName.getComedians()) {
+//            System.out.println(aComedian);
+//        }
+//
+//        session.getTransaction().commit();
+//    }
 
     private void createComediansForName(int nameId) {
         Session session = factory.getCurrentSession();
@@ -70,13 +67,13 @@ public class CrudDemo {
         session.beginTransaction();
 
         // Do stuff
-        ComedianName aName = session.get(ComedianName.class, nameId);
+        String aComedian = session.get(String.class, nameId);
 
-        Comedian comedian1 = new Comedian("xi", 390, "9/15/2019",  "I am a new Footballer", 50 new Date());
-        Comedian comedian2 = new Comedian("jo", 285, "9/17/2019", "I am a new soccer player",55 new Date());
+        Comedian comedian1 = new Comedian("xi", "xi.png",   "I am a new Footballer", 50 );
+        Comedian comedian2 = new Comedian("jo", "jo.png", "I am a new soccer player",55 );
 
-        aName.add(comedian1);
-        aName.add(comedian2);
+        aComedian.add(comedian1);
+        aComedian.add(comedian2);
 
         session.save(comedian1);
         System.out.println(comedian1);
@@ -85,27 +82,27 @@ public class CrudDemo {
 
         session.getTransaction().commit();
     }
-
-    private void deleteDetail() {
-        Session session = factory.getCurrentSession();
-
-        session.beginTransaction();
-
-        ComedianNameDetail detail = session.get(ComedianNameDetail.class, 1);
-        detail.getName().setDetail(null);
-        //detail.setShop(null);
-
-        session.delete(detail);
-
-        session.getTransaction().commit();
-    }
+//
+//    private void deleteDetail() {
+//        Session session = factory.getCurrentSession();
+//
+//        session.beginTransaction();
+//
+//        ComedianNameDetail detail = session.get(ComedianNameDetail.class, 1);
+//        detail.getName().setDetail(null);
+//        //detail.setShop(null);
+//
+//        session.delete(detail);
+//
+//        session.getTransaction().commit();
+//    }
 
     private void deleteNameAndDetail() {
         Session session = factory.getCurrentSession();
 
         session.beginTransaction();
 
-        ComedianName myName = session.get(ComedianName.class, 301);
+        String myName = session.get(String.class, 301);
 
         session.delete(myName);
 
@@ -114,20 +111,20 @@ public class CrudDemo {
         session.getTransaction().commit();
     }
 
-    private void createNameAndDetail() {
-        Session session = factory.getCurrentSession();
-
-        session.beginTransaction();
-
-        // Do stuff
-        ComedianName name = new ComedianName("Kevin's Comedian", "Kevin's-comedians");
-        ComedianNameDetail detail = new ComedianNameDetail();
-        name.setDetail(detail);
-
-        session.save(name);
-
-        session.getTransaction().commit();
-    }
+//    private void createNameAndDetail() {
+//        Session session = factory.getCurrentSession();
+//
+//        session.beginTransaction();
+//
+//        // Do stuff
+//        String name = new String("Kevin's Comedian", "Kevin's-comedians");
+//        ComedianNameDetail detail = new ComedianNameDetail();
+//        name.setDetail(detail);
+//
+//        session.save(name);
+//
+//        session.getTransaction().commit();
+//    }
 
     private void deleteComedian(int comedianId) {
         Session session = factory.getCurrentSession();
@@ -160,7 +157,6 @@ public class CrudDemo {
 
         // Do stuff
         Comedian aComedian = session.get(Comedian.class, 2);
-        aComedian.setDateAdded(DateUtils.parseDate("01/01/2020"));
 
         session.getTransaction().commit();
     }
@@ -173,7 +169,7 @@ public class CrudDemo {
         // Do stuff
         List<Comedian> list = session.createQuery("from Comedian").getResultList();
         for (Comedian aComedian : list) {
-            String newFileName = aComedian.getPicture().replaceAll("-", "_");
+            java.lang.String newFileName = aComedian.getPicture().replaceAll("-", "_");
             aComedian.setPicture(newFileName);
         }
 

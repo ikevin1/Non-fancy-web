@@ -1,6 +1,5 @@
 package edu.wctc.myComic.dao;
 
-import edu.wctc.myComic.entity.ComedianName;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,18 +13,18 @@ public class ComedianNameDAOImpl implements ComedianNameDAO{
     private SessionFactory sessionFactory;
 
     @Override
-    public List<ComedianName> getNames() {
+    public List<String> getNames() {
         Session session = sessionFactory.getCurrentSession();
 
-        List<ComedianName> list = session.createQuery("from ComedianName", ComedianName.class).getResultList();
+        List<String> list = session.createQuery("from String", String.class).getResultList();
 
         return list;
     }
 
     @Override
-    public ComedianName getName(int id) {
+    public String getName(int id) {
         Session session = sessionFactory.getCurrentSession();
 
-        return session.get(ComedianName.class, id);
+        return session.get(String.class, id);
     }
 }

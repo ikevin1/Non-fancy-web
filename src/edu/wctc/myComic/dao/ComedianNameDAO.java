@@ -1,11 +1,9 @@
 package edu.wctc.myComic.dao;
 
-import edu.wctc.myComic.entity.ComedianName;
-
 import java.util.List;
 
 public interface ComedianNameDAO {
-    List<ComedianName> getNames();
+    List<String> getNames();
 
-    ComedianName getName(int id);
+    String getName(int id);
 }

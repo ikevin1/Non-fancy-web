@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
 import java.util.Date;
 
 @Entity
@@ -14,57 +15,49 @@ public class Comedian {
     @Column(name = "comedian_id")
     private int id;
 
-    @ManyToOne(cascade = {CascadeType.DETACH,
-            CascadeType.MERGE,
-            CascadeType.PERSIST,
-            CascadeType.REFRESH})
-    @JoinColumn(name = "comedian_id")
-    private ComedianName name;
 
-    @Column(name = "img_filename")
-    private String picture;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "date_added")
-    private Date dateAdded;
+    @Column(name = "picture_name")
+    private java.lang.String picture;
 
     @NotNull(message = "required")
     @Size(min = 1, max = 350, message = "1-350 characters")
-    @Column(name = "desc")
-    private String description;
+    @Column(name = "description")
+    private java.lang.String description;
 
     @NotNull(message = "required")
     @Min(value = 1, message = "good donations at least 10")
-    @Column(name = "amount")
+    @Column(name = "price")
     private double price;
 
     public Comedian() {
         //no argument constructor
     }
 
-    public Date getDateAdded() {
-        return dateAdded;
-    }
-
-    public void setDateAdded(Date dateAdded) {
-        this.dateAdded = dateAdded;
-    }
-
-    public Comedian(ComedianName name, String picture, Date dateAdded, @NotNull(message = "required") @Size(min = 1, max = 350, message = "1-350 characters") String description, @NotNull(message = "required") @Min(value = 1, message = "good donations at least 10") double price) {
+    public Comedian(String name, String picture, String description, @NotNull(message = "required") @Min(value = 1, message = "good donations at least 10") double price) {
         this.name = name;
         this.picture = picture;
-        this.dateAdded = dateAdded;
         this.description = description;
         this.price = price;
     }
 
-    public String getImagePath() {
+    public java.lang.String getImagePath() {
         if (name == null || picture == null) {
             return "none.jpg";
         }
-        return name.getImageDirectory()
+        return getPicture()
                 + "/"
                 + picture;
     }
+//    public void add(Comedian tempComedian) {
+//        if (name == null) {
+//            name = new ArrayList<Comedian>();
+//        }
+//        name.add(tempComedian);
+//        tempComedian.setName(this);
+//    }
 
     public int getId() {
         return id;
@@ -74,27 +67,27 @@ public class Comedian {
         this.id = id;
     }
 
-    public ComedianName getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(ComedianName name) {
+    public void setName(String name) {
         this.name = name;
     }
 
-    public String getPicture() {
+    public java.lang.String getPicture() {
         return picture;
     }
 
-    public void setPicture(String picture) {
+    public void setPicture(java.lang.String picture) {
         this.picture = picture;
     }
 
-    public String getDescription() {
+    public java.lang.String getDescription() {
         return description;
     }
 
-    public void setDescription(String description) {
+    public void setDescription(java.lang.String description) {
         this.description = description;
     }
 
@@ -107,7 +100,7 @@ public class Comedian {
     }
 
     @Override
-    public String toString() {
+    public java.lang.String toString() {
         return "Comedian{" +
                 "id=" + id +
                 ", name=" + name +
