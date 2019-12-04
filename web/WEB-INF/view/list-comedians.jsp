@@ -9,7 +9,7 @@
 <body>
 <div id="wrapper">
     <div id="header">
-        <h2>Comedian Reviews</h2>
+        <h2>Comedians</h2>
 
         <button class="add-button" onclick="window.location.href='showAddComedianForm';return false;">
             Add Comedian

@@ -6,7 +6,7 @@
 <head>
     <title>Login</title>
     <link type="text/css" rel="stylesheet" href="${contextPath}/resources/css/cart.css">
-    <link type="text/css" rel="stylesheet" href="${contextPath}/resources/css/comedian-form-style.css">
+    <link type="text/css" rel="stylesheet" href="${contextPath}/resources/css/add-comedian-cart.css">
 </head>
 <body>
 <div id="wrapper">
