@@ -7,5 +7,25 @@
       <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
       <jdbc-url>jdbc:derby:$PROJECT_DIR$/lib/comedian</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="myDataSource" uuid="cabf275e-c3d3-4f88-a604-fa24bc89eeda">
+      <driver-ref>derby.embedded</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>c3p0
+
+E:/Distributed Java/Non-fancy-web/web/WEB-INF/applicationContext.xml</remarks>
+      <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby:#{ servletContext.getRealPath('/') }/../../../db</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="hibernate.cfg.xml/Hibernate" uuid="673c91b3-354d-4422-bfda-0bbe63b2b3b9">
+      <driver-ref>derby.embedded</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>Hibernate
+
+E:/Distributed Java/Non-fancy-web/src/hibernate.cfg.xml</remarks>
+      <jdbc-driver>org.apache.derby.jdbc.EmbeddedDriver</jdbc-driver>
+      <jdbc-url>jdbc:derby:$PROJECT_DIR$/lib/comedian</jdbc-url>
+    </data-source>
   </component>
 </project>

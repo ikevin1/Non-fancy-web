@@ -17,11 +17,11 @@
                            http://www.springframework.org/schema/security/spring-security.xsd">
     <!-- BEGIN SECURITY CONFIGURATION -->
 
-    <security:http use-expressions="true" authentication-manager-ref="myAuthenticationManager" >
-        <security:intercept-url pattern="/donut/admin/**" access="hasRole('ADMIN')"/>
-        <security:intercept-url pattern="/donut/user/**" access="hasRole('USER')"/>
+    <security:http use-expressions="true" authentication-manager-ref="myAuthenticationManager">
+        <security:intercept-url pattern="/comedian/admin/**" access="hasRole('ADMIN')"/>
+        <security:intercept-url pattern="/comedian/user/**" access="hasRole('USER')"/>
         <security:intercept-url pattern="/resources/**" access="permitAll()"/>
-        <security:intercept-url pattern="/**" access="permitAll()" />
+        <security:intercept-url pattern="/**" access="permitAll()"/>
 
         <!-- We don't need to write a mapping for "authenticate"
         Spring understands how to process login if we name everything correctly -->
@@ -36,7 +36,7 @@
                          logout-success-url="/showLoginForm?logout=true"/>
     </security:http>
 
-    <security:authentication-manager id="myAuthenticationManager" >
+    <security:authentication-manager id="myAuthenticationManager">
         <security:authentication-provider>
             <security:user-service id="myUserService">
                 <security:user name="user" password="p" authorities="USER"/>
@@ -57,7 +57,7 @@
 
 
         <!-- Change the final "db" to match the path of your database in the project. For example, "lib/worldbible" -->
-        <property name="jdbcUrl" value="jdbc:derby:#{ servletContext.getRealPath('/') }/../../../db"/>
+        <property name="jdbcUrl" value="jdbc:derby:#{ servletContext.getRealPath('/') }/../../../lib/comedian"/>
 
         <!-- Change the user and password to match your database -->
         <property name="user" value="ikevin"/>

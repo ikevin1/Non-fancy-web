@@ -30,14 +30,14 @@ public class ComedianServiceImpl implements ComedianService {
     public void saveComedian(Comedian aComedian,
                           MultipartFile file,
                           String applicationPath) {
-        if (aComedian.getDateAdded() == null) {
-            aComedian.setDateAdded(new Date());
-        }
+            if (aComedian.getName() == null) {
+                aComedian.setName("aComic");
+            }
 
         String filename = pictureService.saveFile(
                 file,
                 applicationPath,
-                aComedian.getName().getImageDirectory());
+                aComedian.getName());
 
         if (filename != null) {
             aComedian.setPicture(filename);

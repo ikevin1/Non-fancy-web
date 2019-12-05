@@ -73,8 +73,8 @@ public class CrudDemo {
         Comedian comedian1 = new Comedian("xi", "xi.png",   "I am a new Footballer", 50 );
         Comedian comedian2 = new Comedian("jo", "jo.png", "I am a new soccer player",55 );
 
-        aComedian.add(comedian1);
-        aComedian.add(comedian2);
+        //aComedian.add(comedian1);
+        //aComedian.add(comedian2);
 
         session.save(comedian1);
         System.out.println(comedian1);
@@ -190,16 +190,16 @@ public class CrudDemo {
         session.getTransaction().commit();
     }
 
-    private void updateAllComedians() {
-        Session session = factory.getCurrentSession();
-
-        session.beginTransaction();
-
-        // Do stuff
-        session.createQuery("update Comedian set description = descriptions + comic").executeUpdate();
-
-        session.getTransaction().commit();
-    }
+//    private void updateAllComedians() {
+//        Session session = factory.getCurrentSession();
+//
+//        session.beginTransaction();
+//
+//        // Do stuff
+//        session.createQuery("update Comedian set description = descriptions + "comic").executeUpdate();
+//
+//        session.getTransaction().commit();
+//    }
 
     private void updateComedian(int comedianId) {
         Session session = factory.getCurrentSession();
@@ -220,7 +220,7 @@ public class CrudDemo {
         session.beginTransaction();
 
         // Do stuff
-        List<Comedian> list = session.createQuery("from Comedian where name = 'm' order by dateAdded desc").getResultList();
+        List<Comedian> list = session.createQuery("from Comedian where name = 'm' ").getResultList();
 
         printComedianList(list);
 
@@ -260,8 +260,8 @@ public class CrudDemo {
         session.beginTransaction();
 
         // Do stuff
-        Date sepFirst = DateUtils.parseDate("09/01/2019");
-        Comedian comedian = new Comedian("Bessie", 309, "bessie.png", sepFirst);
+       // Date sepFirst = DateUtils.parseDate("09/01/2019");
+        Comedian comedian = new Comedian("Bessie", "bessy.png", "I am an artist",50);
 
         session.save(comedian);
 
