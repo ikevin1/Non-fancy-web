@@ -17,7 +17,7 @@
                            http://www.springframework.org/schema/security/spring-security.xsd">
     <!-- BEGIN SECURITY CONFIGURATION -->
 
-    <security:http use-expressions="true" authentication-manager-ref="myAuthenticationManager">
+    <security:http use-expressions="true" authentication-manager-ref="myAuthenticationManager" >
         <security:intercept-url pattern="/comedian/admin/**" access="hasRole('ADMIN')"/>
         <security:intercept-url pattern="/comedian/user/**" access="hasRole('USER')"/>
         <security:intercept-url pattern="/resources/**" access="permitAll()"/>
@@ -39,9 +39,11 @@
     <security:authentication-manager id="myAuthenticationManager">
         <security:authentication-provider>
             <security:user-service id="myUserService">
-                <security:user name="user" password="p" authorities="USER"/>
-                <security:user name="admin" password="p" authorities="USER,ADMIN"/>
+                <security:user name="ik" password="ik" authorities="USER"/>
+                <security:user name="kev" password="kev" authorities="USER,ADMIN"/>
             </security:user-service>
+            <security:jdbc-user-service  data-source-ref="myDataSource"/>
+
         </security:authentication-provider>
     </security:authentication-manager>
 
