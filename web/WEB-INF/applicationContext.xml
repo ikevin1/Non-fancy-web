@@ -42,7 +42,6 @@
                 <security:user name="ik" password="ik" authorities="USER"/>
                 <security:user name="kev" password="kev" authorities="USER,ADMIN"/>
             </security:user-service>
-            <security:jdbc-user-service  data-source-ref="myDataSource"/>
 
         </security:authentication-provider>
     </security:authentication-manager>

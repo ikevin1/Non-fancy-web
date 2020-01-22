@@ -54,7 +54,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" exported="" name="Spring" level="application" />
     <orderEntry type="library" name="Spring MVC-4.3.18.RELEASE" level="project" />
     <orderEntry type="library" name="Hibernate 5.4.5-5.4.5" level="project" />
     <orderEntry type="library" name="jstl:jstl:1.2" level="project" />
@@ -72,5 +71,9 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="Spring Security-5.2.1" level="project" />
+    <orderEntry type="library" name="com.fasterxml.jackson.core:jackson-databind:2.10.1" level="project" />
+    <orderEntry type="library" name="derby-10.14.1.0" level="project" />
+    <orderEntry type="library" name="org.springframework:spring-tx:5.2.3.RELEASE" level="project" />
   </component>
 </module>
