@@ -71,9 +71,18 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="Spring Security-5.2.1" level="project" />
     <orderEntry type="library" name="com.fasterxml.jackson.core:jackson-databind:2.10.1" level="project" />
     <orderEntry type="library" name="derby-10.14.1.0" level="project" />
     <orderEntry type="library" name="org.springframework:spring-tx:5.2.3.RELEASE" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../Non-fancy-web-master/lib/springsecurity" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+        <jarDirectory url="file://$MODULE_DIR$/../Non-fancy-web-master/lib/springsecurity" recursive="false" />
+      </library>
+    </orderEntry>
   </component>
 </module>

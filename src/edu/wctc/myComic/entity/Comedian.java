@@ -75,7 +75,7 @@ public class Comedian {
         this.name = name;
     }
 
-    public java.lang.String getPicture() {
+    public String getPicture() {
         return picture;
     }
 
@@ -83,7 +83,7 @@ public class Comedian {
         this.picture = picture;
     }
 
-    public java.lang.String getDescription() {
+    public String getDescription() {
         return description;
     }
 

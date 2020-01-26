@@ -22,7 +22,7 @@ public class ComedianController {
     @Autowired
     private ComedianService comedianService;
 
-    @Autowired
+   //  @Autowired
     private ComedianNameService comedianNameService;
 
     @RequestMapping("/list")
@@ -59,7 +59,7 @@ public class ComedianController {
 
         theModel.addAttribute("aComedian", existingComedian);
 
-        theModel.addAttribute("names", comedianNameService.getNames());
+        theModel.addAttribute("names", comedianNameService.getComedians());
 
         return "add-comedian-form";
     }
@@ -70,7 +70,7 @@ public class ComedianController {
 
         theModel.addAttribute("aComedian", plainComedian);
 
-        theModel.addAttribute("names", comedianNameService.getNames());
+        theModel.addAttribute("names", comedianNameService.getComedians());
 
         return "add-comedian-form";
     }
@@ -84,7 +84,7 @@ public class ComedianController {
         if (bindingResult.hasErrors()) {
             System.out.println(bindingResult);
 
-            theModel.addAttribute("names", comedianNameService.getNames());
+            theModel.addAttribute("names", comedianNameService.getComedians());
 
             return "add-comedian-form";
         }
