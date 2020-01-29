@@ -22,7 +22,7 @@ html, body {
 
 #header {
     width: 100%;
-    background: #2980b9;
+    background: #A9A9A9;
     margin-top: 0px;
     padding: 15px 0px 15px 15px;
 }
@@ -31,6 +31,7 @@ html, body {
     width: 100%;
     margin: auto;
     color: #DC143C;
+    font-size: 25px;
 }
 .animate-show-hide.ng-hide {
     opacity: 0;

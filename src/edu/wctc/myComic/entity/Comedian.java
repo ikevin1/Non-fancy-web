@@ -79,7 +79,7 @@ public class Comedian {
         return picture;
     }
 
-    public void setPicture(java.lang.String picture) {
+    public void setPicture(String picture) {
         this.picture = picture;
     }
 
@@ -87,7 +87,7 @@ public class Comedian {
         return description;
     }
 
-    public void setDescription(java.lang.String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 
@@ -100,7 +100,7 @@ public class Comedian {
     }
 
     @Override
-    public java.lang.String toString() {
+    public String toString() {
         return "Comedian{" +
                 "id=" + id +
                 ", name=" + name +
