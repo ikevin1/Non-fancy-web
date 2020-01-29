@@ -8,6 +8,11 @@
     <link rel="stylesheet" type="text/css" href="${contextPath}/resources/css/cart.css">
 </head>
 <body>
+
+<div id="containerr" style="padding-left: 500px; padding-bottom: 40px;">
+    <img ng-src="resources/img/dis.jpg" style="height:190px; width:300px">
+</div>
+
 <%@include file="/WEB-INF/view/includes/header.jsp"%>
 
 <div id="container">
