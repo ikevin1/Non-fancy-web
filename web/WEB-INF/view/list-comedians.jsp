@@ -30,8 +30,8 @@
                 <th></th>
                 <th>Name</th>
                 <th>Price</th>
-                <th>Picture</th>
                 <th>Description</th>
+                <th>Picture</th>
                 <th>Date Added</th>
                 <th>Action</th>
             </tr>
@@ -50,11 +50,10 @@
                         <img src="${pageContext.request.contextPath}/resources/img/${tempComedian.imagePath}"
                              alt="${tempComedian.name}">
                     </td>
-                    <td>${tempComedian.name.name}</td>
+                    <td>${tempComedian.name}</td>
                     <td>${tempComedian.price}</td>
                     <td>${tempComedian.description}</td>
                     <td>${tempComedian.picture}</td>
-                    <td>${tempComedian.formattedDate}</td>
                     <td>
                         <a href="${updateLink}">Update</a>
                         &nbsp;|&nbsp;
@@ -63,7 +62,6 @@
                     </td>
                 </tr>
             </c:forEach>
-
         </table>
     </div>
 </div>

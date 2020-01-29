@@ -8,6 +8,11 @@ import javax.servlet.http.HttpServletRequest;
 
 @Controller
 public class HomeController {
+    @RequestMapping("/")
+    public String showHomePage(){
+        return "index";
+    }
+
     @RequestMapping("/error")
     public String showErrorPage(HttpServletRequest request,
                                 Model theModel) {

@@ -1,7 +1,6 @@
 package edu.wctc.myComic.controller;
 
 import edu.wctc.myComic.entity.Comedian;
-import edu.wctc.myComic.service.ComedianNameService;
 import edu.wctc.myComic.service.ComedianService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
@@ -22,11 +21,8 @@ public class ComedianController {
     @Autowired
     private ComedianService comedianService;
 
-   //  @Autowired
-    private ComedianNameService comedianNameService;
-
     @RequestMapping("/list")
-    public String listDonuts(Model theModel) {
+    public String listComedians(Model theModel) {
         List<Comedian> theList = comedianService.getComedians();
 
         theModel.addAttribute("comedians", theList);
@@ -59,7 +55,7 @@ public class ComedianController {
 
         theModel.addAttribute("aComedian", existingComedian);
 
-        theModel.addAttribute("names", comedianNameService.getComedians());
+        theModel.addAttribute("names", comedianService.getComedians());
 
         return "add-comedian-form";
     }
@@ -70,7 +66,7 @@ public class ComedianController {
 
         theModel.addAttribute("aComedian", plainComedian);
 
-        theModel.addAttribute("names", comedianNameService.getComedians());
+        theModel.addAttribute("names", comedianService.getComedians());
 
         return "add-comedian-form";
     }
@@ -84,7 +80,7 @@ public class ComedianController {
         if (bindingResult.hasErrors()) {
             System.out.println(bindingResult);
 
-            theModel.addAttribute("names", comedianNameService.getComedians());
+            theModel.addAttribute("names", comedianService.getComedians());
 
             return "add-comedian-form";
         }
