@@ -6,11 +6,12 @@
 <head>
     <title>Comedian List</title>
     <link rel="stylesheet" type="text/css" href="${contextPath}/resources/css/cart.css">
+    <script src="resources/js/cart.js"></script>
 </head>
 <body>
 
 <div id="containerr" style="padding-left: 500px; padding-bottom: 40px;">
-    <img ng-src="resources/img/dis.jpg" style="height:190px; width:300px">
+    <img ng-src="${contextPath}/resources/img/dis.jpg" style="height:190px; width:300px">
 </div>
 
 <%@include file="/WEB-INF/view/includes/header.jsp"%>
@@ -40,7 +41,6 @@
                 <th>Price</th>
                 <th>Description</th>
                 <th>Picture</th>
-                <th>Date Added</th>
                 <th>Action</th>
             </tr>
 
@@ -65,7 +65,6 @@
                     <td>${tempComedian.price}</td>
                     <td>${tempComedian.description}</td>
                     <td>${tempComedian.picture}</td>
-
                     <td>
                         <!-- display the update link -->
                         <a href="${updateLink}">Update</a>
@@ -81,4 +80,9 @@
 </div>
 
 </body>
+<footer class="py-5 bg-dark">
+    <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; {{Cart}} {{copyright}} Kevin.</p>
+    </div>
+</footer>
 </html>
