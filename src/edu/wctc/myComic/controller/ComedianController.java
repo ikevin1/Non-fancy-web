@@ -36,7 +36,7 @@ public class ComedianController {
 
         List<Comedian> theList = comedianService.getComediansByName(theSearchTerm);
 
-        theModel.addAttribute("donuts", theList);
+        theModel.addAttribute("comedians", theList);
 
         return "list-comedians";
     }
@@ -72,7 +72,7 @@ public class ComedianController {
     }
 
     @PostMapping("/save")
-    public String saveDonut(@RequestParam(name = "comedianImage") MultipartFile file,
+    public String saveComedian(@RequestParam(name = "comedianImage") MultipartFile file,
                             @Valid @ModelAttribute(name = "aComedian") Comedian theComedian,
                             BindingResult bindingResult,
                             Model theModel,

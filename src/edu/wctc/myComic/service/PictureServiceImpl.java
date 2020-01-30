@@ -10,7 +10,7 @@ import java.io.File;
 public class PictureServiceImpl implements PictureService{
     @Override
     public String saveFile(MultipartFile file, String applicationPath, String imageDirectory) {
-        String filename = null;
+        String fileName = null;
         try {
             if (!file.isEmpty()) {
                 String artifactPath = applicationPath
@@ -21,18 +21,18 @@ public class PictureServiceImpl implements PictureService{
                         + "web\\WEB-INF\\resources\\img\\"
                         + imageDirectory;
 
-                filename = file.getOriginalFilename();
+                fileName = file.getOriginalFilename();
 
 
-                File imageFile = new File(artifactPath, filename);
+                File imageFile = new File(artifactPath, fileName);
                 file.transferTo(imageFile);
 
-                File copyOfImage = new File(sourcePath, filename);
+                File copyOfImage = new File(sourcePath, fileName);
                 FileUtils.copyFile(imageFile, copyOfImage);
             }
         } catch (Exception e) {
         }
 
-        return filename;
+        return fileName;
     }
 }

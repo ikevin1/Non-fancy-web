@@ -2,6 +2,7 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<!DOCTYPE html>
 <html>
 <head>
     <title>Comedian List</title>
@@ -10,7 +11,7 @@
 <body>
 
 <div id="containerr" style="padding-left: 500px; padding-bottom: 40px;">
-    <img ng-src="resources/img/dis.jpg" style="height:190px; width:300px">
+    <img ng-src="${contextPath}/resources/img/dis.jpg" style="height:190px; width:300px">
 </div>
 
 <%@include file="/WEB-INF/view/includes/header.jsp"%>
@@ -35,7 +36,7 @@
         <!-- comedian list table -->
         <table>
             <tr>
-                <th></th>
+<%--                <th></th>--%>
                 <th>Name</th>
                 <th>Price</th>
                 <th>Description</th>
@@ -56,14 +57,15 @@
                 </c:url>
 
                 <tr>
-                    <td>
-                        <img src="${contextPath}/resources/img/${tempComedian.imagePath}"
-                             alt="${tempComedian.name}">
-                    </td>
+
                     <td>${tempComedian.name}</td>
                     <td>${tempComedian.price}</td>
                     <td>${tempComedian.description}</td>
-                    <td>${tempComedian.picture}</td>
+                    <td>
+                    <img src="${contextPath}/resources/img/${tempComedian.imagePath}"
+                         alt="${tempComedian.name}">
+                    </td>
+<%--                    <td>${tempComedian.picture}</td>--%>
                     <td>
                         <!-- display the update link -->
                         <a href="${updateLink}">Update</a>

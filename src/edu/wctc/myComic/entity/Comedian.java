@@ -43,14 +43,12 @@ public class Comedian {
         this.price = price;
     }
 
-    public String getImagePath() {
-        if (picture == null || name == null) {
-            return "none.jpg";
-        }
-        return getPicture()
-                + "/"
-                + picture;
-    }
+//    public String getImagePath() {
+//        if (picture == null || name == null) {
+//            return "none.jpg";
+//        }
+//        return picture;
+//    }
 //    public void add(Comedian tempComedian) {
 //        if (name == null) {
 //            name = new ArrayList<Comedian>();

@@ -31,7 +31,7 @@ html, body {
     width: 100%;
     margin: auto;
     color: #DC143C;
-    font-size: 25px;
+    font-size: 35px;
 }
 .animate-show-hide.ng-hide {
     opacity: 0;
@@ -190,5 +190,5 @@ a:hover {
 }
 
 #containerr {
-    margin-left: 50%;
+    margin-left: 49%;
 }

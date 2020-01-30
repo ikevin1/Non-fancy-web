@@ -29,11 +29,11 @@
                 </c:if>
                 <tr>
                     <td><label>Username</label></td>
-                    <td><input type="text" name="username" value="user"></td> <!-- Spring expects this to have name="username" -->
+                    <td><input type="text" name="username" value="user-ID"></td> <!-- Spring expects this to have name="username" -->
                 </tr>
                 <tr>
                     <td><label>Password</label></td>
-                    <td><input type="text" name="password" value="p"></td> <!-- Spring expects this to have name="password" -->
+                    <td><input type="password" name="password" value="ur-Password"></td> <!-- Spring expects this to have name="password" -->
                 </tr>
                 <tr>
                     <td></td>
