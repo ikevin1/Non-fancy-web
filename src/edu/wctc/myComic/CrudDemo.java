@@ -151,16 +151,16 @@ public class CrudDemo {
         session.getTransaction().commit();
     }
 
-    private void updateDate() {
-        Session session = factory.getCurrentSession();
-
-        session.beginTransaction();
-
-        // Do stuff
-        Comedian aComedian = session.get(Comedian.class, 2);
-
-        session.getTransaction().commit();
-    }
+//    private void updateDate() {
+//        Session session = factory.getCurrentSession();
+//
+//        session.beginTransaction();
+//
+//        // Do stuff
+//        Comedian aComedian = session.get(Comedian.class, 2);
+//
+//        session.getTransaction().commit();
+//    }
 
     private void updateImageFile() {
         Session session = factory.getCurrentSession();

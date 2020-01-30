@@ -20,12 +20,12 @@ public class Comedian {
     private String name;
 
     @Column(name = "picture_name")
-    private java.lang.String picture;
+    private String picture;
 
     @NotNull(message = "required")
     @Size(min = 1, max = 350, message = "1-350 characters")
     @Column(name = "description")
-    private java.lang.String description;
+    private String description;
 
     @NotNull(message = "required")
     @Min(value = 1, message = "good donations at least 10")
@@ -43,8 +43,8 @@ public class Comedian {
         this.price = price;
     }
 
-    public java.lang.String getImagePath() {
-        if (name == null || picture == null) {
+    public String getImagePath() {
+        if (picture == null || name == null) {
             return "none.jpg";
         }
         return getPicture()

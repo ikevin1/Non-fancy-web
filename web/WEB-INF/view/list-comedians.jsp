@@ -6,12 +6,11 @@
 <head>
     <title>Comedian List</title>
     <link rel="stylesheet" type="text/css" href="${contextPath}/resources/css/cart.css">
-    <script src="resources/js/cart.js"></script>
 </head>
 <body>
 
 <div id="containerr" style="padding-left: 500px; padding-bottom: 40px;">
-    <img ng-src="${contextPath}/resources/img/dis.jpg" style="height:190px; width:300px">
+    <img ng-src="resources/img/dis.jpg" style="height:190px; width:300px">
 </div>
 
 <%@include file="/WEB-INF/view/includes/header.jsp"%>
@@ -82,7 +81,7 @@
 </body>
 <footer class="py-5 bg-dark">
     <div class="container">
-        <p class="m-0 text-center text-white">Copyright &copy; {{Cart}} {{copyright}} Kevin.</p>
+        <p class="m-0 text-center text-white">Copyright &copy; Kevin.</p>
     </div>
 </footer>
 </html>

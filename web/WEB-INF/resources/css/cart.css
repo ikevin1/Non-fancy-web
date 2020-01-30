@@ -93,7 +93,6 @@ h2 {
     padding: 16px;
     z-index: 15;
     border-radius: 4px;
-
     transition: all 2s ease-out;
 }
 
@@ -109,6 +108,8 @@ p {
 }
 footer {
     display: block;
+    margin-left: 50%;
+    margin-top: 45px;
 }
 
 button {
@@ -165,7 +166,7 @@ a:hover {
 
 #container {
     width: 100%;
-    margin: auto
+    margin: auto;
 }
 
 #container h3 {
@@ -186,4 +187,8 @@ a:hover {
     padding: 5px 10px;
     margin-bottom: 15px;
     background: #cccccc;
+}
+
+#containerr {
+    margin-left: 50%;
 }
